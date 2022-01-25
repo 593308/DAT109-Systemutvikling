@@ -1,5 +1,6 @@
 package pakke;
 
+import java.util.Scanner;
 
 public class Main {
 	
