@@ -9,6 +9,7 @@ public class Main {
 		
 		System.out.println("Hvor mange spillere?");
 		Scanner s = new Scanner();
+		System.out.println("test");
 		
 	
 		
