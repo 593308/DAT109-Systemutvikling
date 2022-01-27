@@ -8,9 +8,9 @@ public class Main {
 		
 		
 		
-		System.out.println("Hvor mange spillere?");
-		Scanner s = new Scanner();
-		System.out.println("test");
+		Stigespill spill = new Stigespill(5);
+		
+		spill.spill();
 		
 	
 		
