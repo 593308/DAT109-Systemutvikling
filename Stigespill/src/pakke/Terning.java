@@ -1,12 +1,19 @@
 package pakke;
 
+/**
+ * 
+ * @author MatiasRaknes
+ *
+ */
+
 public class Terning {
-	
-	public Terning() {
-		
-	}
-	
-	public int trill() {
+
+	/**
+	 * triller terning
+	 */
+
+	public int  trill() {
+
 		return 5;
 	}
 

@@ -1,5 +1,11 @@
 package pakke;
 
+/** 
+ * 
+ * @author MatiasRaknes
+ *
+ */
+
 public class Spiller {
 	
 	private int spillerNr;

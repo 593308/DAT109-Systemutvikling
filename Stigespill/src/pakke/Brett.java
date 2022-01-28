@@ -2,10 +2,20 @@ package pakke;
 
 import java.util.HashMap;
 
+/** 
+ * 
+ * @author MatiasRaknes
+ *
+ */
+
 public class Brett {
 	
 	private HashMap<Rute, Integer> slangerOgStiger;
 	private Rute[] ruter;
+	
+	/**
+	 * lager brettet
+	 */
 	
 	public Brett(int antallRuter) {
 		
@@ -18,21 +28,35 @@ public class Brett {
 		opprettStiger();
 		opprettSlanger();
 	}
-	
+	/**
+	 * 
+	 */
 	
 	private void opprettStiger() {
 		this.slangerOgStiger.put(ruter[4], 100 - 1);
 	}
 	
 
+	/**
+	 *  TODO
+	 */
 	private void opprettSlanger() {
 	}
 	
 	
-
+	
+	
+	
+	/**
+	 * TODO
+	 */
 	public HashMap<Rute, Integer> getSlangerOgStiger() {
 		return slangerOgStiger;
 	}
+	
+	/**
+	 * Sjekker rute, er det en spesiell rute
+	 */
 	
 	public Rute sjekkRute(int ruteNr) {
 		

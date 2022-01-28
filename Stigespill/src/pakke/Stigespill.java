@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  * 
- * @author egilstahllovold
+ * @author MatiasRaknes
  *
  */
 
@@ -18,14 +18,13 @@ public class Stigespill {
 	private Spiller[] spillere;
 
 	/**
-	 * Starter spillet
+	 * angir data til spillet
 	 */
-
 	public Stigespill(int antallSpillere) {
 
 		while (antallSpillere < 2 || antallSpillere > 4) {
 			antallSpillere = Integer
-					.parseInt(JOptionPane.showInputDialog("Antall spillere må være mellom 2 og 4!\nAntall spillere:"));
+					.parseInt(JOptionPane.showInputDialog("Antall spillere mï¿½ vï¿½re mellom 2 og 4!\nAntall spillere:"));
 		}
 
 		this.antallSpillere = antallSpillere;
@@ -44,6 +43,10 @@ public class Stigespill {
 
 	}
 
+	/**
+	 * Starter spillet
+	 */
+
 	public void spill() {
 
 		System.out.println("Stigespille startet!");
@@ -57,6 +60,10 @@ public class Stigespill {
 		}
 
 	}
+	
+	/**
+	 * Spiller gjÃ¸r et trekk + sjekk om hvor mange 6-ere spiller triller
+	 */
 
 	public void spillTrekk(Spiller spiller) {
 		int terning = 6;
@@ -64,25 +71,26 @@ public class Stigespill {
 		int i = 0;
 		while (terning == 6 && i < 2) {
 			i++;
-			//terning = this.terning.trill();
+			// terning = this.terning.trill();
 			terning = 5;
-			System.out.println("Spiller nr. " + spiller.getSpillerNr() + " trillet " + terning + "!!\n-Flytter brikke til plass " + spiller.getRute() + terning);
-			
+			System.out.println("Spiller nr. " + spiller.getSpillerNr() + " trillet " + terning
+					+ "!!\n-Flytter brikke til plass " + spiller.getRute() + terning);
+
 			spiller.setRute(brett.getRuter()[spiller.getRute().getRuteNummer() + terning]);
-			
+
 			brett.sjekkRute(spiller.getRute().getRuteNummer());
-			
+
 		}
 
 		if (i == 3) {
-			System.out.println("ÅNEI, spiller " + spiller.getSpillerNr()
-					+ " trillet 6, hele tre ganger på rad! Du havner tilbake på rute 1 :((((");
+			System.out.println("ï¿½NEI, spiller " + spiller.getSpillerNr()
+					+ " trillet 6, hele tre ganger pï¿½ rad! Du havner tilbake pï¿½ rute 1 :((((");
 
 		} else if (spiller.getRute().getRuteNummer() == 99) {
-			
+
 			System.out.println("Gratulerer spiller nr. " + spiller.getSpillerNr() + "!! Du har vunnet spillet!");
 			this.ferdig = true;
-			
+
 		}
 
 	}
