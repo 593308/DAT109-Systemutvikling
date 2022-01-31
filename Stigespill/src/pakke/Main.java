@@ -1,6 +1,8 @@
 package pakke;
 
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 /** 
  * 
  * @author MatiasRaknes
@@ -16,7 +18,7 @@ public class Main {
 		 */
 		
 		
-		Stigespill spill = new Stigespill(4);
+		Stigespill spill = new Stigespill(Integer.parseInt(JOptionPane.showInputDialog("Velg antall spillere som skal spille")));
 		
 		spill.start();
 		
