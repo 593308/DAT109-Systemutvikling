@@ -22,21 +22,21 @@ public class Stigespill {
 	 */
 	public Stigespill(int antallSpillere) {
 
-		while (antallSpillere < 2 || antallSpillere > 4) {
+		while (antallSpillere < 2 || antallSpillere > 100) {
 			antallSpillere = Integer
-					.parseInt(JOptionPane.showInputDialog("Antall spillere mï¿½ vï¿½re mellom 2 og 4!\nAntall spillere:"));
+					.parseInt(JOptionPane.showInputDialog("Antall spillere må være mellom 2 og 4!\nAntall spillere:"));
 		}
 
 		this.antallSpillere = antallSpillere;
 
 		spillere = new Spiller[antallSpillere];
+		this.brett = new Brett(100);
 
 		for (int i = 0; i < antallSpillere; i++) {
-			spillere[i] = new Spiller(i + 1);
+			spillere[i] = new Spiller(i + 1, this);
 		}
 
 		this.terning = new Terning();
-		this.brett = new Brett(100);
 		this.ferdig = false;
 
 		System.out.println("Stigespill opprettet med " + antallSpillere + " spillere!");
@@ -47,51 +47,50 @@ public class Stigespill {
 	 * Starter spillet
 	 */
 
-	public void spill() {
+	public void start() {
 
 		System.out.println("Stigespille startet!");
 
 		while (!this.ferdig) {
 
 			for (int i = 0; i < antallSpillere; i++) {
+//				try {
+//					Thread.sleep(2000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 				if (!ferdig)
-					spillTrekk(spillere[i]);
+					spillere[i].spillTrekk();
+				if (spillere[i].getRute() >= 100) {
+					System.out.println("Gratulerer spiller nr. " + spillere[i].getSpillerNr()
+							+ "!! Du har vunnet spillet\nAvslutter...");
+					ferdig = true;
+				}
+
+			}
+
+		}
+		if (!ferdig)
+			System.out.println("Ny runde");
+		else {
+			System.out.println();
+			for (int i = 0; i < antallSpillere; i++) {
+				System.out.println("Spiller nr. " + (i + 1)+ " kom på plass:" + spillere[i].getRute());
 			}
 		}
 
 	}
-	
+
 	/**
-	 * Spiller gjÃ¸r et trekk + sjekk om hvor mange 6-ere spiller triller
+	 * Spiller gjør et trekk + sjekk om hvor mange 6-ere spiller triller
 	 */
 
-	public void spillTrekk(Spiller spiller) {
-		int terning = 6;
+	public Brett getBrett() {
+		return brett;
+	}
 
-		int i = 0;
-		while (terning == 6 && i < 2) {
-			i++;
-			// terning = this.terning.trill();
-			terning = 5;
-			System.out.println("Spiller nr. " + spiller.getSpillerNr() + " trillet " + terning
-					+ "!!\n-Flytter brikke til plass " + spiller.getRute() + terning);
-
-			spiller.setRute(brett.getRuter()[spiller.getRute().getRuteNummer() + terning]);
-
-			brett.sjekkRute(spiller.getRute().getRuteNummer());
-
-		}
-
-		if (i == 3) {
-			System.out.println("ï¿½NEI, spiller " + spiller.getSpillerNr()
-					+ " trillet 6, hele tre ganger pï¿½ rad! Du havner tilbake pï¿½ rute 1 :((((");
-
-		} else if (spiller.getRute().getRuteNummer() == 99) {
-
-			System.out.println("Gratulerer spiller nr. " + spiller.getSpillerNr() + "!! Du har vunnet spillet!");
-			this.ferdig = true;
-
-		}
-
+	public Terning getTerning() {
+		return terning;
 	}
 }

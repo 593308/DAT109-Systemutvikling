@@ -12,13 +12,13 @@ public class Main {
 	public static void main(String[] args) {
 		
 		/**
-		 * starter spillet og angir hvor mange som skal vÃ¦re med 
+		 * starter spillet og angir hvor mange som skal væree med 
 		 */
-		System.out.println(Terning.trill());
 		
-		Stigespill spill = new Stigespill(5);
 		
-		spill.spill();
+		Stigespill spill = new Stigespill(4);
+		
+		spill.start();
 		
 	
 		

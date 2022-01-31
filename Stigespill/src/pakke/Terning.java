@@ -7,14 +7,23 @@ package pakke;
  */
 
 public class Terning {
+	
+	private int verdi;
 
 	/**
 	 * triller terning
 	 */
 
-	public int  trill() {
+	public void trill() {
 
-		return 5;
+		//return (int) (Math.random()*6 + 1);
+		
+		verdi = (int) (Math.random()*6 + 1);
+		
+	}
+	
+	public int getVerdi() {
+		return verdi;
 	}
 
 }
