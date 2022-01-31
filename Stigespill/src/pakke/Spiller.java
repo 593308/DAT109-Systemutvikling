@@ -20,6 +20,10 @@ public class Spiller {
 		trash = false;
 	}
 
+	
+	/**
+	 * spiller gjÃ¸r et trekk
+	 */
 	public void spillTrekk() {
 
 		int terning = 6;
@@ -29,13 +33,13 @@ public class Spiller {
 		System.out.println("Spiller nr. " + spillerNr);
 
 		if (trash) {
-			System.out.println("Du er trash, du må trille 6 for å fjerne denne forbannelsen og komme deg videre! >:D");
+			System.out.println("Du er trash, du mï¿½ trille 6 for ï¿½ fjerne denne forbannelsen og komme deg videre! >:D");
 		}
 
 		while (terning == 6 && i < 3 && rute < 100) {
 			
 			if (i > 0)
-				System.out.println("Du har trillet 6, så du kan trille igjen :D");
+				System.out.println("Du har trillet 6, sï¿½ du kan trille igjen :D");
 			i++;
 
 			spill.getTerning().trill();
@@ -55,7 +59,7 @@ public class Spiller {
 
 
 			if (nyRute > 100) {
-			System.out.println("-Du trillet " + terning + ". Du må trille nøyaktig " + (100 - rute) + " for å vinne spillet, prøv neste runde ;)"
+			System.out.println("-Du trillet " + terning + ". Du mï¿½ trille nï¿½yaktig " + (100 - rute) + " for ï¿½ vinne spillet, prï¿½v neste runde ;)"
 					);
 			
 			}
@@ -71,8 +75,8 @@ public class Spiller {
 
 		if (i == 3 && terning == 6) {
 			trash = true;
-			System.out.println("ÅNEI, spiller " + spillerNr
-					+ " trillet 6, hele tre ganger på rad! Du havner tilbake på rute 1 :((((\n-Spiller nr. " + spillerNr
+			System.out.println("ï¿½NEI, spiller " + spillerNr
+					+ " trillet 6, hele tre ganger pï¿½ rad! Du havner tilbake pï¿½ rute 1 :((((\n-Spiller nr. " + spillerNr
 					+ " har blitt trash, skam deg");
 			rute = 0;
 

@@ -41,7 +41,7 @@ public class Brett {
 	}
 
 	/**
-	 * TODO
+	 * oppretter slanger
 	 */
 	private void opprettSlanger() {
 		boolean opptatt = false;
@@ -69,6 +69,10 @@ public class Brett {
 		} while (opptatt);
 	}
 
+	
+	/**
+	 * oppretter stiger
+	 */
 	private void opprettStiger() {
 		boolean opptatt = false;
 
@@ -97,6 +101,11 @@ public class Brett {
 		} while (opptatt);
 
 	}
+	
+	/**
+	 * genererer en tilfeldig rute pÃ¥ brettet
+	 * 
+	 */
 
 	private Integer tilfeldigRute() {
 		Random r = new Random();
@@ -112,9 +121,9 @@ public class Brett {
 		if (slangerOgStiger.containsKey(rute)) {
 			if (slangerOgStiger.get(rute) > rute)
 				System.out.println(
-						"Grattis! Du har landet på en stige og blir flyttet til plass " + slangerOgStiger.get(rute));
+						"Grattis! Du har landet pï¿½ en stige og blir flyttet til plass " + slangerOgStiger.get(rute));
 			else
-				System.out.println("Wooops, du har havnet på en slange og blir flyttet tilbake til plass "
+				System.out.println("Wooops, du har havnet pï¿½ en slange og blir flyttet tilbake til plass "
 						+ slangerOgStiger.get(rute));
 
 			return slangerOgStiger.get(rute);
