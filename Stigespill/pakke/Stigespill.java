@@ -54,12 +54,7 @@ public class Stigespill {
 		while (!this.ferdig) {
 
 			for (int i = 0; i < antallSpillere; i++) {
-//				try {
-//					Thread.sleep(2000);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
+//				
 				if (!ferdig)
 					spillere[i].spillTrekk();
 				if (spillere[i].getRute() >= 100) {

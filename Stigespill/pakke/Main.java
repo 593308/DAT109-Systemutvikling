@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		/**
-		 * starter spillet og angir hvor mange som skal væree med 
+		 * starter spillet og angir hvor mange som skal vï¿½ree med 
 		 */
 		
 		
