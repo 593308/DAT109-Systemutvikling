@@ -24,7 +24,7 @@ public class Stigespill {
 
 		while (antallSpillere < 2 || antallSpillere > 100) {
 			antallSpillere = Integer
-					.parseInt(JOptionPane.showInputDialog("Antall spillere må være mellom 2 og 4!\nAntall spillere:"));
+					.parseInt(JOptionPane.showInputDialog("Antall spillere mï¿½ vï¿½re mellom 2 og 4!\nAntall spillere:"));
 		}
 
 		this.antallSpillere = antallSpillere;
@@ -76,14 +76,14 @@ public class Stigespill {
 		else {
 			System.out.println();
 			for (int i = 0; i < antallSpillere; i++) {
-				System.out.println("Spiller nr. " + (i + 1)+ " kom på plass:" + spillere[i].getRute());
+				System.out.println("Spiller nr. " + (i + 1)+ " kom pï¿½ plass:" + spillere[i].getRute());
 			}
 		}
 
 	}
 
 	/**
-	 * Spiller gjør et trekk + sjekk om hvor mange 6-ere spiller triller
+	 * Spiller gjï¿½r et trekk + sjekk om hvor mange 6-ere spiller triller
 	 */
 
 	public Brett getBrett() {
@@ -92,5 +92,9 @@ public class Stigespill {
 
 	public Terning getTerning() {
 		return terning;
+	}
+	
+	public int antallSpillere() {
+		return antallSpillere;
 	}
 }
